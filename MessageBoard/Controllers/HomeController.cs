@@ -1,4 +1,5 @@
-﻿using MessageBoard.Services;
+﻿using MessageBoard.Data;
+using MessageBoard.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,24 @@ namespace MessageBoard.Controllers
     [RequireHttps]
     public class HomeController : Controller
     {
+        //Brought in with Ninject
         private IMailService _mail;
+        private IMessageBoardRepository _repo;
 
-        public HomeController(IMailService mail)
+        public HomeController(IMailService mail, IMessageBoardRepository repo)
         {
             _mail = mail;
+            _repo = repo;
         }
 
         public ActionResult Index()
         {
-            return View();
+            var topics = _repo.GetTopics()
+                .OrderByDescending(t => t.Created)
+                .Take(25)
+                .ToList();
+
+            return View(topics);
         }
 
         public ActionResult About()
