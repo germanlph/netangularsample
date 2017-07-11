@@ -1,0 +1,10 @@
+POST https://localhost:44332/api/topics HTTP/1.1
+User-Agent: Fiddler
+ContentType: application/json
+Content-Length: 55
+Host: localhost:44332
+
+{
+"title":"some new title",
+"body":"some new body"
+}

@@ -231,6 +231,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\RepliesController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\IMessageBoardRepository.cs" />
     <Compile Include="Data\MessageBoardContext.cs" />
@@ -380,6 +381,16 @@
     <Content Include="Content\template\font-awesome\fontawesome-webfont.eot" />
     <Content Include="Content\template\font-awesome\fontawesome-webfont.ttf" />
     <Content Include="Content\template\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="js\home-index.js" />
+    <Content Include="js\home-index.min.js">
+      <DependentUpon>home-index.js</DependentUpon>
+    </Content>
+    <Content Include="js\myapp.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom.js" />
@@ -399,6 +410,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -416,6 +429,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="templates\newTopicView.html" />
+    <Content Include="templates\singleTopicView.html" />
+    <Content Include="templates\topicsView.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

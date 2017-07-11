@@ -16,7 +16,14 @@ namespace MessageBoard.App_Start
             var jsonFormatter = configuration.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}", new { id = RouteParameter.Optional });
+            configuration.Routes.MapHttpRoute("RepliesRoute", 
+                "api/v1/topics/{topicId}/replies/{id}", 
+                new { controller = "replies", id = RouteParameter.Optional });
+
+            configuration.Routes.MapHttpRoute("DefaultApi", 
+                "api/v1/topics/{id}", 
+                new { controller = "topics", id = RouteParameter.Optional });
+
             configuration.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
         }
     }
